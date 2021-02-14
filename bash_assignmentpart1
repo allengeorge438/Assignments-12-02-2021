@@ -1,0 +1,92 @@
+#!/bin/bash
+#Author Allen George
+
+#program to print a number entered by the user
+
+echo "---------------Program to print a number entered by the user-----------------"
+read -p "Enter a number:" number
+echo "entered number is: $number" 
+
+#program to display pyramid and pattern
+
+echo "---------------printing pyramid and pattern-------------------------------"
+read -p "Enter the pyramid size:" pyramidsize
+for((i=1;i<=$pyramidsize;i++))
+do
+	for((j=1;j<=pyramidsize-i;j++))
+	do
+		echo -ne " "
+	done
+	for((j=1;j<=2*i-1;j++))
+	do
+		echo -ne "*"
+	done
+echo
+done
+for((i=1;i<=$pyramidsize;i++))
+do
+	for((j=1;j<=i;j++))
+	do
+		echo -ne "*"
+	done
+echo
+done
+
+#program to swap two numbers
+
+echo "---------------To swap two numbers----------------------------------"
+read -p "enter value of x:" x
+read -p "enter value of y:" y
+temp=$x
+x=$y
+y=$temp
+echo "value of x is: $x"
+echo "value of y is: $y"
+
+#program to find quotient and remainder
+
+echo "-----------------To find quotient and remainder---------------------------"
+read -p "enter first number:" number1
+read -p "enter second number:" number2
+quotient=`expr $number1 / $number2`
+remainder=`expr $number1 % $number2`
+echo "quotient is: $quotient"
+echo "remainder is: $remainder"
+
+#program to check if a number is positive or not
+
+echo "------------------to check positive or not----------------------------"
+read -p "enter the number:" num
+if [ $num -ge 0 ]
+then
+	echo "number is positive"
+else
+	echo "number is negative"
+fi
+
+#program to check if a number is prime or not
+
+echo "-----------------program to check a prime number------------------------"
+read -p "enter a number:" prime
+for((i=2;i<=prime/2;i++))
+do
+	if [ $((prime%i)) -eq 0 ]
+	then
+		echo "$prime is not a prime number"
+		exit
+	fi
+done
+	echo "$prime is a prime number"
+
+#program to find out the factorial of a number
+
+echo "------------------To find the factorial of a number----------------------"
+read -p "enter the number:" n
+fact=1
+for((i=1;i<=n;i++))
+do
+	fact=$((fact * i))
+done
+echo "factorial is: $fact"
+
+

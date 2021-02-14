@@ -1,0 +1,47 @@
+#!/bin/bash
+#author: Allen George
+#program to find sqaure root of a number
+
+echo "-----------------To print square root of a number----------------"
+read -p "enter a number:" number
+result=`echo "scale=4;sqrt($number)" | bc`
+echo "square root of the number is:$result"
+
+#To get a list of all users 
+
+echo "------------All users---------------"
+cat /etc/passwd
+
+#To get a list of all groups
+
+echo "------------All groups---------------"
+cat /etc/group
+
+#To calculate area of a traingle
+
+echo "-----------Area of a traingle--------------------"
+read -p "enter the first side of the traingle:" a
+read -p "enter second side of the triangle:" b
+read -p "enter third side of the triangle:" c
+s=`echo "scale=4; ($a + $b + $c)/2" | bc`
+area=`echo "scale=4; sqrt($s * ($s - $a) * ($s - $b) * ($s - $c))" | bc`
+echo "Area of the traingle is: $area"
+
+#To calculate area of a rectangle
+echo "-----------Area of a rectangle--------------------"
+read -p "Enter the length of the rectangle:" l
+read -p "enter the breadth of the rectangle:" b
+area=`expr $l \* $b`
+echo "area of the rectangle is: $area"
+
+#Celsius to fahrenheit
+echo "-------------Celsius to Fahrenheit---------------"
+read -p "enter the celsius temperature:" c
+f=`echo "scale=4; (($c * 1.8) + 32)" | bc`
+echo "fahrenheit temperature is: $f"
+
+#Fahrenheit to Celsius
+echo "-------------Fahrenheit to Celsius----------------"
+read -p "enter the Fahrenheit temperature:" f
+c=`echo "scale=4; ($f - 32) / 1.8" | bc`
+echo "Celsius temperature is: $c"

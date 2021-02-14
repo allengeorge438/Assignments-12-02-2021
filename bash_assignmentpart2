@@ -1,0 +1,97 @@
+#!/bin/bash
+#author:Allen George
+
+#program to add two matrices
+
+echo "------------program to add two matrices------------------------"
+read -p "enter no of rows in matrix:" m
+read -p "enter no of columns matrix:" n
+echo "Enter first matrix values:"
+for((i=0;i<m;i++))
+do
+	for((j=0;j<n;j++))
+	do
+		read -p "enter matrix value ($i,$j):" A[$i$j]
+	done
+done
+echo "Enter second matrix values:"
+for((i=0;i<m;i++))
+do
+	for((j=0;j<n;j++))
+	do
+		read -p "enter matrix value ($i,$j):" B[$i$j]
+	done
+done
+echo "elements of first matrix:"
+for((i=0;i<m;i++))
+do
+	for((j=0;j<n;j++))
+	do
+		echo -ne ${A[$i$j]} " "
+	done
+	echo
+done
+echo "elements of second matrix:"
+for((i=0;i<m;i++))
+do
+	for((j=0;j<n;j++))
+	do
+		echo -ne ${B[$i$j]} " "
+	done
+	echo
+done
+echo "sum of matrix is:"
+for((i=0;i<m;i++))
+do
+	for((j=0;j<n;j++))
+	do
+		C[$i$j]=`expr ${A[$i$j]} + ${B[$i$j]}`
+	done
+done
+for((i=0;i<m;i++))
+do
+	for((j=0;j<n;j++))
+	do
+		echo -ne ${C[$i$j]} " "
+	done
+	echo
+done
+
+#program to find the Transpose of a matrix
+
+echo "-------------------To find the transpose of a matrix------------------------------"
+read -p "enter no of rows in matrix:" row
+read -p "enter no of columns in matrix:" col
+echo "enter matrix values:"
+for((i=0;i<row;i++))
+do
+	for((j=0;j<col;j++))
+	do
+		read -p "Enter matrix value ($i,$j):" A[$i$j]
+	done
+done
+echo "matrix values are:"
+for((i=0;i<row;i++))
+do
+	for((j=0;j<col;j++))
+	do
+		echo -ne "${A[$i$j]} "
+	done
+	echo
+done
+for((i=0;i<row;i++))
+do
+	for((j=0;j<col;j++))
+	do
+		B[$j$i]=${A[$i$j]}
+	done
+done
+echo "Transpose matrix is:"
+for((i=0;i<row;i++))
+do
+	for((j=0;j<col;j++))
+	do
+		echo -ne "${B[$i$j]} "
+	done
+	echo
+done
